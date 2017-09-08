@@ -1,32 +1,40 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# DB設計
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+## group_users table
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
-- belongs_to :group
-- belongs_to :user
+- belongs_to :groups
+- belongs_to :users
+
+## groups table
+|Column|Type|Options|
+|------|----|-------|
+|name|text|null: false, unique:true|
+
+- has_many :group_users
+- has_many :users, through: :group_users
+- has_many :messages
+
+## users table
+|Column|Type|Options|
+|------|----|-------|
+|nickname|text|null: false, unique:true|
+
+- has_many :group_users
+- has_many :groups, through: :group_users
+- has_many :messages
+
+## messages table
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, unique:true|
+|group_id|integer|null: false, unique:true|
+|body|text|null: false|
+
+- belongs_to :groups
+- belongs_to :users
