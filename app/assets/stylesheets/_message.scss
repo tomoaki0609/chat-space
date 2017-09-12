@@ -14,12 +14,12 @@
     background-color: #253141;
     float: left;
 
-      .user_name {
-        font-size: 16px;
-        padding-top: 35px;
-        padding-bottom: 39px;
-        font-weight: bold;
-        float: left;
+    .user_name {
+      font-size: 16px;
+      padding-top: 35px;
+      padding-bottom: 39px;
+      font-weight: bold;
+      float: left;
 
     }
 
@@ -39,15 +39,15 @@
     height: 50vh;
     overflow: scroll;
 
-      .group_name {
-        padding-top: 20px;
-        padding-bottom: 5px;
+    .group_name {
+      padding-top: 20px;
+      padding-bottom: 5px;
 
-      }
-      .first_message {
-        padding-bottom: 40px
+    }
+    .first_message {
+      padding-bottom: 40px
 
-      }
+    }
   }
 }
 
@@ -88,45 +88,53 @@
     }
   }
 
-}
-
 
 
   .chat_contents {
     background-color: white;
     padding-left: 40px;
-    height: calc(100vh - 150px);
+    height: calc(100vh - 220px);
     overflow: scroll;
     clear: both;
 
-      .chat_name {
-        padding-top: 46px;
-        padding-bottom: 10px;
-      }
+    .chat_name {
+      padding-top: 46px;
+      padding-bottom: 10px;
+    }
   }
+}
 
   //送信部分
 .send_form {
-  background-color: aqua;
+  background-color: gray;
   clear: both;
-  height: 30px;
+  height: 100px;
   width: calc(100vw - 300px);
 
 
   .comment{
     float: left;
     width: 60vw;
+
   }
   .send {
-    width: 60vw;
+    width: 63vw;
+    height: 50px;
+    margin: 25px;
   }
-  .send_button{
+  .send_button {
     float: right;
-    margin: 0 20px
-  }
-  .fa{
-    float: right;
-    margin: 5px 10px;
+    position: relative;
+    top: 25px;
+
+    input {
+      background-color: #38AEF0;
+      width: 77px;
+      height: 3.5em;
+    }
   }
 }
+  .fa{
+    padding-top: 45px;
+    }
 

@@ -29,8 +29,8 @@
     .chat_group
       %p.group_name brothers
       %p.member member: tomoo, keio, masao
-      %form.edit_button
-        %input{:type => "submit", :value => "Edit" }/
+      %f.edit_button
+        %input{type:"submit", value:"Edit" }/
     .chat_contents
       %p.chat_name tomoo,2017/09/09 16:30
       %p コメント
@@ -67,9 +67,9 @@
     //投稿フォーム
     .send_form
       %form.comment
-        %input.send{:placeholder => "チャットする", :type => "text"}/
+        %input.send{placeholder:"チャットする", type:"text"}/
 
         %br/
-      %form.send_button
-        %input{:type => "submit", :value => "send"}/
+      %f.send_button
+        %input{type:"submit", value:"send"}/
       %i.fa.fa-photo.fa-lg
