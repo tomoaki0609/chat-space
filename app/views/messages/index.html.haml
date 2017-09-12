@@ -1,25 +1,90 @@
-//左の部分
-.sidebar
-  .side_user
-    %p.user_name ともお
-
-  .side_group
-    %p.group_name tomoo_brothers
-    %p.first_message まだメッセージはありません。
-    %p.group_name keio_brothers
-    %p.first_message まだメッセージはありません
-    %p.group_name masao_brothers
-    %p.first_message まだメッセージはありません。
+%body
+  //サイドバー
+  .sidebar
+    .side_user
+      %p.user_name tomoo
+      %a{:href => "###"}
+        %i.fa.fa-cog.fa-fw.fa-lg.faa-tada.animated-hover
+      %a{:href => "###"}
+        %i.fa.fa-edit.fa-fw.fa-lg.faa-vertical.animated-hover
 
 
-//右の部分
-.chat
-  .chat_group
-    %p.group_name brothers
-    %p.member member: ともお, けいお, まさお
-  .chat_contents
-    %p.chat_name ともお,2017/09/09 16:30
-    %p きたね
+    .side_group
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name tomoo_brothers
+      %p.first_message まだメッセージはありません。
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name keio_brothers
+      %p.first_message まだメッセージはありません
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name masao_brothers
+      %p.first_message まだメッセージはありません。
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name masao_brothers
+      %p.first_message まだメッセージはありません。
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name masao_brothers
+      %p.first_message まだメッセージはありません。
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name masao_brothers
+      %p.first_message まだメッセージはありません。
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name masao_brothers
+      %p.first_message まだメッセージはありません。
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name masao_brothers
+      %p.first_message まだメッセージはありません。
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name masao_brothers
+      %p.first_message まだメッセージはありません。
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name masao_brothers
+      %p.first_message まだメッセージはありません。
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name masao_brothers
+      %p.first_message まだメッセージはありません。
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name masao_brothers
+      %p.first_message まだメッセージはありません。
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name masao_brothers
+      %p.first_message まだメッセージはありません。
 
-//投稿フォーム
-.send_option
+
+  //チャット部分
+  .chat
+    //
+    .chat_group
+      %p.group_name brothers
+      %p.member member: tomoo, keio, masao
+      %form.edit_button
+        %input{:type => "submit", :value => "Edit" }/
+    .chat_contents
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p なにーーーー！！！
+
+
+    //投稿フォーム
+    .send_form
+      %form.comment
+        %input.send{:placeholder => "チャットする", :type => "text"}/
+
+        %br/
+      %form.send_button
+        %input{:type => "submit", :value => "send"}/
+      %i.fa.fa-photo.fa-lg

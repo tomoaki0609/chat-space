@@ -1,20 +1,43 @@
+ //サイドバー
 .sidebar {
   width: 300px;
+  height: 100vh;
   color: white;
   float: left;
+  background-color: #2f3e51;
+
 
   .side_user {
+    width: calc(100% - 40px);
+    height: 120px;
+    padding: 0px 20px 0px;
     background-color: #253141;
+    float: left;
 
-    .user_name {
-      font-size: 16px;
-      padding-top: 35px;
-      padding-bottom: 39px;
+      .user_name {
+        font-size: 16px;
+        padding-top: 35px;
+        padding-bottom: 39px;
+        font-weight: bold;
+        float: left;
+
+    }
+
+    .fa {
+      color: white;
+      float: right;
+      margin-top: 40px;
+
+    }
+    .fa:hover{
+      color: aqua;
     }
   }
 
   .side_group {
-    background-color: #2f3e51;
+    padding-left: 20px;
+    height: 50vh;
+    overflow: scroll;
 
       .group_name {
         padding-top: 20px;
@@ -28,26 +51,82 @@
   }
 }
 
+
+  //チャット部分
 .chat {
   float: left;
-  width: 900px;
+  width: calc(100vw - 300px);
+  height: 100vh;
 
   .chat_group {
+    height: 120px;
+    width: 100%;
+    border-bottom: dotted 1px #eeeeee;
+    float: left;
     .group_name {
-      padding-top: 35px;
-      padding-bottom: 15px;
+      width: 30%;
+      padding:35px 40px 15px;
+      clear: both;
     }
-
+    .member{
+      float: left;
+      padding:0px 40px 0px;
+    }
+    .edit_button {
+      float: right;
+      top:60px;
+      input{
+        width: 60px;
+        height:40px;
+        border:solid 3px #38AEF0;
+        background-color: white;
+        color: #38AEF0;
+        position: absolute;
+        right: 20px;
+        top: 40px;
+      }
+    }
   }
+
+}
 
 
 
   .chat_contents {
-    background-color: #AAAAAA;
+    background-color: white;
+    padding-left: 40px;
+    height: calc(100vh - 150px);
+    overflow: scroll;
+    clear: both;
 
       .chat_name {
         padding-top: 46px;
         padding-bottom: 10px;
       }
   }
+
+  //送信部分
+.send_form {
+  background-color: aqua;
+  clear: both;
+  height: 30px;
+  width: calc(100vw - 300px);
+
+
+  .comment{
+    float: left;
+    width: 60vw;
+  }
+  .send {
+    width: 60vw;
+  }
+  .send_button{
+    float: right;
+    margin: 0 20px
+  }
+  .fa{
+    float: right;
+    margin: 5px 10px;
+  }
 }
+
