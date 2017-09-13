@@ -1,0 +1,139 @@
+ //サイドバー
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  color: white;
+  float: left;
+  background-color: #2f3e51;
+
+
+  .side_user {
+    width: calc(100% - 40px);
+    height: 120px;
+    padding: 0px 20px 0px;
+    background-color: #253141;
+
+    .user_name {
+      font-size: 16px;
+      padding-top: 35px;
+      padding-bottom: 39px;
+      font-weight: bold;
+      float: left;
+
+    }
+
+    .fa {
+      color: white;
+      margin-top: 40px;
+      float: right;
+
+    }
+    .fa:hover{
+      color: aqua;
+    }
+  }
+
+  .side_group {
+    padding-left: 20px;
+    height: 50vh;
+    overflow: scroll;
+
+    .group_name {
+      padding-top: 20px;
+      padding-bottom: 5px;
+
+    }
+    .first_message {
+      padding-bottom: 40px
+
+    }
+  }
+}
+
+
+  //チャット部分
+.chat {
+  float: left;
+  width: calc(100vw - 300px);
+  height: 100vh;
+
+  .chat_group {
+    height: 120px;
+    width: 100%;
+    border-bottom: dotted 1px #eeeeee;
+    float: left;
+    .group_name {
+      width: 30%;
+      padding:35px 40px 15px;
+      clear: both;
+    }
+    .member{
+      float: left;
+      padding:0px 40px 0px;
+    }
+    .edit_button {
+      float: right;
+      top:60px;
+      input{
+        width: 60px;
+        height:40px;
+        border:solid 3px #38AEF0;
+        background-color: white;
+        color: #38AEF0;
+        position: absolute;
+        right: 20px;
+        top: 40px;
+      }
+    }
+  }
+
+
+
+  .chat_contents {
+    background-color: white;
+    padding-left: 40px;
+    height: calc(100vh - 220px);
+    overflow: scroll;
+    clear: both;
+
+    .chat_name {
+      padding-top: 46px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+  //送信部分
+.send_form {
+  background-color: gray;
+  clear: both;
+  height: 100px;
+  width: calc(100vw - 300px);
+
+
+  .comment{
+    float: left;
+    width: 60vw;
+
+  }
+  .send {
+    width: 63vw;
+    height: 50px;
+    margin: 25px;
+  }
+  .send_button {
+    float: right;
+    position: relative;
+    top: 25px;
+
+    input {
+      background-color: #38AEF0;
+      width: 77px;
+      height: 3.5em;
+    }
+  }
+}
+  .fa{
+    padding-top: 45px;
+  }
+

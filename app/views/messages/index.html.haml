@@ -1,0 +1,75 @@
+%body
+  //サイドバー
+  .sidebar
+    .side_user
+      %p.user_name tomoo
+      %a{:href => "###"}
+        %i.fa.fa-cog.fa-fw.fa-lg.faa-tada.animated-hover
+      %a{:href => "###"}
+        %i.fa.fa-edit.fa-fw.fa-lg.faa-vertical.animated-hover
+
+
+    .side_group
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name tomoo_brothers
+      %p.first_message まだメッセージはありません。
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name keio_brothers
+      %p.first_message まだメッセージはありません
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name tomoo_brothers
+      %p.first_message まだメッセージはありません。
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name tomoo_brothers
+      %p.first_message まだメッセージはありません。
+      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name tomoo_brothers
+      %p.first_message まだメッセージはありません。
+
+
+
+  //チャット部分
+  .chat
+    //
+    .chat_group
+      %p.group_name brothers
+      %p.member member: tomoo, keio, masao
+      %f.edit_button
+        %input{type:"submit", value:"Edit" }/
+    .chat_contents
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+      %p.chat_name tomoo,2017/09/09 16:30
+      %p コメント
+
+
+    //投稿フォーム
+    .send_form
+      %form.comment
+        %input.send{placeholder:"チャットする", type:"text"}/
+
+        %br/
+      %f.send_button
+        %input{type:"submit", value:"send"}/
+      %i.fa.fa-photo.fa-lg
