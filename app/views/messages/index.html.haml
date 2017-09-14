@@ -3,10 +3,11 @@
   .sidebar
     .side_user
       %p.user_name tomoo
+      = link_to destroy_user_session_path, method: :delete do
+        %i.fa.fa-cog.fa-fw.fa-lg
       %a{:href => "###"}
-        %i.fa.fa-cog.fa-fw.fa-lg.faa-tada.animated-hover
-      %a{:href => "###"}
-        %i.fa.fa-edit.fa-fw.fa-lg.faa-vertical.animated-hover
+        %i.fa.fa-edit.fa-fw.fa-lg
+
 
 
     .side_group
