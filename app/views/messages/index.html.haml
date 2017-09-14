@@ -3,7 +3,7 @@
   .sidebar
     .side_user
       %p.user_name tomoo
-      = link_to destroy_user_session_path, method: :delete do
+      = link_to edit_user_path(current_user) do
         %i.fa.fa-cog.fa-fw.fa-lg
       %a{:href => "###"}
         %i.fa.fa-edit.fa-fw.fa-lg
