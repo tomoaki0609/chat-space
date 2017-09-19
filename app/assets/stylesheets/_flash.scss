@@ -1,9 +1,9 @@
-.flash {
-  color: white;
+.flash{
   text-align: center;
   &__alert{
     background-color: red;
   }
-  &__notice {
+  &__notice{
     background-color: blue;
   }
+}
