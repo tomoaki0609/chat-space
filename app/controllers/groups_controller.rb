@@ -23,10 +23,7 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-    if current_user.groups.ids.include?(@group.id)
-      @group.update(group_params)
-    end
-    if @group.save
+    if @group.update(group_params)
       redirect_to root_path, notice: "グループを編集しました"
     else
       flash.now[:alert] = "グループ名を入力してください"
