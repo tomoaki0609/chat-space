@@ -1,18 +1,6 @@
 
 //サイドバー
-.sidebar
-  .side_user
-    %p.user_name tomoo
-    = link_to edit_user_path(current_user) do
-      %i.fa.fa-cog.fa-fw.fa-lg
-    = link_to new_group_path do
-      %i.fa.fa-edit.fa-fw.fa-lg
-
-  .side_group
-    - @groups.each do |group|
-      = link_to group_messages_path(group) do
-        %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name= group.name
-        %p.first_message まだメッセージはありません。
+= render 'groups/sidebar'
 
 
 
