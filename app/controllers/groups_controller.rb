@@ -22,17 +22,16 @@ class GroupsController < ApplicationController
   end
 
   def update
-    group = Group.find(params[:id])
-    if group.id == current_user.id
-      group.update(group_params)
+    @group = Group.find(params[:id])
+    if current_user.groups.ids.include?(@group.id)
+      @group.update(group_params)
       redirect_to root_path
     end
   end
 
   private
-
-    def group_params
-      params.require(:group).permit(:name, {:user_ids => []})
-    end
+  def group_params
+    params.require(:group).permit(:name, {:user_ids => []})
+  end
 
 end
