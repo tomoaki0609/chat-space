@@ -1,79 +1,68 @@
-%body
-  //サイドバー
-  .sidebar
-    .side_user
-      %p.user_name tomoo
-      = link_to edit_user_path(current_user) do
-        %i.fa.fa-cog.fa-fw.fa-lg
-      = link_to new_group_path do
-        %i.fa.fa-edit.fa-fw.fa-lg
+
+//サイドバー
+.sidebar
+  .side_user
+    %p.user_name tomoo
+    = link_to edit_user_path(current_user) do
+      %i.fa.fa-cog.fa-fw.fa-lg
+    = link_to new_group_path do
+      %i.fa.fa-edit.fa-fw.fa-lg
+
+  .side_group
+    - @groups.each do |group|
+      = link_to group_messages_path(group) do
+        %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name= group.name
+        %p.first_message まだメッセージはありません。
 
 
 
-    .side_group
-      / = @
-      %p tomoo_brothers
-      %p.first_message まだメッセージはありません。
+//チャット部分
+.chat
+  //
+  .chat_group
+    %p.group_name= @groups.name
+    %p.member member: tomoo, keio, masao
+    = link_to edit_group_path(@group) do
+      %p Edit
+  .chat_contents
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
+    %p.chat_name tomoo,2017/09/09 16:30
+    %p コメント
 
 
-      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name keio_brothers
-      %p.first_message まだメッセージはありません
-      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name tomoo_brothers
-      %p.first_message まだメッセージはありません。
-      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name tomoo_brothers
-      %p.first_message まだメッセージはありません。
-      %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name tomoo_brothers
-      %p.first_message まだメッセージはありません。
+  //投稿フォーム
+  .send_form
+    %form.comment
+      %input.send{placeholder:"チャットする", type:"text"}/
 
-
-
-  //チャット部分
-  .chat
-    //
-    .chat_group
-      %p.group_name brothers
-      %p.member member: tomoo, keio, masao
-      %f.edit_button
-        %input{type:"submit", value:"Edit" }/
-    .chat_contents
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-      %p.chat_name tomoo,2017/09/09 16:30
-      %p コメント
-
-
-    //投稿フォーム
-    .send_form
-      %form.comment
-        %input.send{placeholder:"チャットする", type:"text"}/
-
-        %br/
-      %f.send_button
-        %input{type:"submit", value:"send"}/
-      %i.fa.fa-photo.fa-lg
+      %br/
+    %f.send_button
+      %input{type:"submit", value:"send"}/
+    %i.fa.fa-photo.fa-lg
