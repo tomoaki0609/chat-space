@@ -1,0 +1,28 @@
+=form_for @group do |f|
+  .chat-group-form__errors
+  .chat-group-form__field.clearfix
+    .chat-group-form__field--left
+      .chat-group-form__label
+        =f.label :name, "グループ名"
+    .chat-group-form__field--right
+      =f.text_field :name, id: 'chat_group_name', class: 'chat-group-form__input', placeholder: 'グループ名を入力してください'
+  .chat-group-form__field.clearfix
+    - if @group.present?
+      .chat-group-form__field.clearfix
+    - else
+      .chat-group-form__field.clearfix
+        .chat-group-form__field--left
+          = f.label :groups, "チャットメンバーを追加"
+
+  .chat-group-form__field.clearfix
+    .chat-group-form__field--left
+      = f.label :groups, "チャットメンバー"
+
+    .chat-group-form__field--right
+      = collection_check_boxes(:group, :user_ids, User.all, :id, :name) do |b|
+        = b.label { b.check_box + b.text }
+      .chat-group-form__action-btn
+        - if @group.present?
+          =f.submit 'CREATE',style: 'background-color:aqua;'
+        - else
+          =f.submit "EDIT",style: 'background-color:red;'
