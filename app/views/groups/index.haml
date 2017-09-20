@@ -5,9 +5,6 @@
       %i.fa.fa-cog.fa-fw.fa-lg
     = link_to new_group_path do
       %i.fa.fa-edit.fa-fw.fa-lg
-
-
-
   .side_group
     - @groups.each do |group|
       = link_to group_messages_path(group) do
