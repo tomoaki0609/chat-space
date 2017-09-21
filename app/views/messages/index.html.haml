@@ -6,29 +6,23 @@
 .chat
   //
   .chat_group
-    %p.group_name= @group.name
-    %p.member member: tomoo, keio, masao
-    = link_to edit_group_path(@group) do
-      %p Edit
+    .group
+      %p.group_name= @group.name
+      = link_to edit_group_path(@group) do
+        %p.edit_button Edit
+    %p.member member: @group.users
   .chat_contents
     - @messages.each do |message|
-      %p.chat_name= current_user.name
+      %p.chat_name= message.user.name
       %p= message.body
 
 
   //投稿フォーム
-  .send_form
-    .comment
+  .message_form
+    .message
       = form_for [@group, @message] do |f|
         .send
           =f.text_field :body, placeholder:"チャットする"
-          .send_button
-          = f.submit "Send"
           %i.fa.fa-photo.fa-lg
-    / %form.comment
-    /   %input.send{placeholder:"チャットする", type:"text"}/
-
-    /   %br/
-    / %f.send_button
-    /   %input{type:"submit", value:"send"}/
-    / %i.fa.fa-photo.fa-lg
+        .send_button
+          = f.submit "Send"
