@@ -10,9 +10,12 @@
       %p.group_name= @group.name
       = link_to edit_group_path(@group) do
         %p.edit_button Edit
-    %p.member member: @group.users
+      %p.member
+        - @group.users.each do |user|
+          = user.name + ","
   .chat_contents
     - @messages.each do |message|
+      = image_tag message.image
       %p.chat_name= message.user.name
       %p= message.body
 
@@ -21,8 +24,12 @@
   .message_form
     .message
       = form_for [@group, @message] do |f|
-        .send
+        .false_send_form
+          = f.hidden_field :image_cache
+        .send_form
           =f.text_field :body, placeholder:"チャットする"
-          %i.fa.fa-photo.fa-lg
+          %label
+            %i.fa.fa-photo.fa-lg
+            =f.file_field :image, style: "display: none"
         .send_button
           = f.submit "Send"
