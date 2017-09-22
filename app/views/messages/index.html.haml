@@ -15,9 +15,9 @@
           = user.name + ","
   .chat_contents
     - @messages.each do |message|
-      = image_tag message.image
       %p.chat_name= message.user.name
       %p= message.body
+      = image_tag message.image
 
 
   //投稿フォーム

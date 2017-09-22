@@ -8,12 +8,9 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @group = Group.find(params[:group_id])
-    @groups = current_user.groups
-    @messages = @group.messages.all
-    @message = Message.new(message_params)
+    @message = current_user.messages.new(message_params)
     if @message.save
-      redirect_to group_messages_path
+      redirect_to group_messages_path, notice: "メッセージを作成しました"
     else
       flash.now[:alert] = "メッセージを入力してください"
       render :index
@@ -22,7 +19,7 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:body, :image, :image_cache).merge(group_id: params[:group_id], user_id: current_user.id)
+    params.require(:message).permit(:body, :image, :image_cache).merge(group_id: params[:group_id])
   end
 
 end
