@@ -1,56 +1,35 @@
 
 //サイドバー
-= render 'groups/sidebar'
-
-
+= render "groups/sidebar"
 
 //チャット部分
 .chat
   //
   .chat_group
-    %p.group_name= @groups.name
-    %p.member member: tomoo, keio, masao
-    = link_to edit_group_path(@group) do
-      %p Edit
+    .group
+      %p.group_name= @group.name
+      = link_to edit_group_path(@group) do
+        %p.edit_button Edit
+      %p.member
+        - @group.users.each do |user|
+          = user.name + ","
   .chat_contents
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
-    %p.chat_name tomoo,2017/09/09 16:30
-    %p コメント
+    - @messages.each do |message|
+      %p.chat_name= message.user.name
+      %p= message.body
+      = image_tag message.image
 
 
   //投稿フォーム
-  .send_form
-    %form.comment
-      %input.send{placeholder:"チャットする", type:"text"}/
-
-      %br/
-    %f.send_button
-      %input{type:"submit", value:"send"}/
-    %i.fa.fa-photo.fa-lg
+  .message_form
+    .message
+      = form_for [@group, @message] do |f|
+        .false_send_form
+          = f.hidden_field :image_cache
+        .send_form
+          =f.text_field :body, placeholder:"チャットする"
+          %label
+            %i.fa.fa-photo.fa-lg
+            =f.file_field :image, style: "display: none"
+        .send_button
+          = f.submit "Send"
