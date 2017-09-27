@@ -17,7 +17,7 @@ describe MessagesController, type: :controller do
   describe 'GET #index' do
     before do
       login_user user
-      get :index, group_id: group
+      get :index, group_id
     end
 
     context 'login' do
@@ -46,8 +46,8 @@ describe MessagesController, type: :controller do
 
     context 'not login' do
 
-      it "renders the :index template" do
-        expect(response).to render_template :index
+      it 'redirects to new_user_session_path' do
+        redirect_to new_user_session_path
       end
 
     end
@@ -91,7 +91,7 @@ describe MessagesController, type: :controller do
     end
 
     context 'not login' do
-      it 'redirects to sign-in page'do
+      it 'redirects to sign-in page' do
       post :create, params
         expect(response).to redirect_to new_user_session_path
       end
