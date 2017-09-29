@@ -10,4 +10,8 @@
     - @groups.each do |group|
       = link_to group_messages_path(group) do
         %p.fa.fa-user.fa-fw.faa-tada.animated-hover.group_name= group.name
-        %p.first_message= group.messages
+      - if group.messages
+        %p.first_message= "masao"
+      - else
+        %p.first_message まだメッセージはありません
+

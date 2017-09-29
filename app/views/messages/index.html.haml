@@ -27,7 +27,7 @@
         .false_send_form
           = f.hidden_field :image_cache
         .send_form
-          =f.text_field :body, placeholder:"チャットする"
+          =f.text_field :body, placeholder: "チャットする", class: "bodybox"
           %label
             %i.fa.fa-photo.fa-lg
             =f.file_field :image, style: "display: none"
