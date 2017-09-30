@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     var html = `
     <p class="chat_name">
-    ${message.user_name}<br/>
+    ${message.user_name}  ${message.time}<br/>
     </p>
     <p>
     ${message.body}
