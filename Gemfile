@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.0.6'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
@@ -34,22 +34,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'haml-rails'
-
-gem 'erb2haml'
-
-gem 'font-awesome-rails'
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'rails-controller-testing'
-  gem 'rspec-rails'
-  gem 'factory_girl_rails', "~> 4.4.1"
-  gem 'faker'
-  gem 'rails-controller-testing'
-  gem 'pry-byebug'
 end
 
 group :development do
@@ -59,19 +47,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
-
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'font-awesome-rails'
-
-gem 'devise'
-
-gem 'haml-rails'
-
-gem 'carrierwave'
-
-gem 'rails-i18n'
