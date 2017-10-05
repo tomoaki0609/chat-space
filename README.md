@@ -1,24 +1,35 @@
-# README
+# DB設計
+## group_users table
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+- belongs_to :groups
+- belongs_to :users
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## groups table
+|Column|Type|Options|
+|------|----|-------|
+|name|text|null: false, unique:true|
+- has_many :group_users
+- has_many :users, through: :group_users
+- has_many :messages
 
-Things you may want to cover:
+## users table
+|Column|Type|Options|
+|------|----|-------|
+|nickname|text|null: false, unique:true|
+- has_many :group_users
+- has_many :groups, through: :group_users
+- has_many :messages
 
-* Ruby version
+## messages table
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, unique:true|
+|group_id|integer|null: false, unique:true|
+|body|text|null: false|
+- belongs_to :groups
+- belongs_to :users
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+// compiled file. JavaScript code in this file should be added after the last require_* statement.
